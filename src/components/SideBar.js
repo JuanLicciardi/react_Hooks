@@ -4,8 +4,11 @@ import ContentWrapper from './ContentWrapper';
 import GenresInDb from './GenresInDb';
 import LastMovieInDb from './LastMovieInDb';
 import ContentRowMovies from './ContentRowMovies';
+
 import NotFound from './NotFound';
+
 import {Link, Route, Switch} from 'react-router-dom';
+import SearchMovies from './SearchMovies';
 
 function SideBar(){
     return(
@@ -57,6 +60,14 @@ function SideBar(){
                         <i className="fas fa-fw fa-table"></i>
                         <span>Tables</span></Link>
                 </li>
+                
+                {/*<!-- Nav Item - Tables -->*/}
+                <li className="nav-item nav-link">
+                <Link className="nav-link" to="/SearchMovies">
+                        <i className="fa fa-search"></i>
+                        <span>Search movies</span></Link>
+                </li>
+                
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
@@ -92,6 +103,11 @@ function SideBar(){
                 <Route path="/ContentRowMovies">
                     <ContentRowMovies />
                 </Route>
+                <Route path="/SearchMovies">
+                    <SearchMovies />
+                </Route>
+                
+
                 <Route component={NotFound} />
             </Switch>
             {/*<!-- End Microdesafio 2 -->*/}
